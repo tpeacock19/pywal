@@ -14,7 +14,7 @@ except ImportError:
     exit(1)
 
 
-def gtk_reload():
+def gtk_2_reload():
     """Reload GTK2 themes."""
     events = gtk.gdk.Event(gtk.gdk.CLIENT_EVENT)
     data = gtk.gdk.atom_intern("_GTK_READ_RCFILES", False)
@@ -24,4 +24,4 @@ def gtk_reload():
     events.send_clientmessage_toall()
 
 
-gtk_reload()
+gtk_2_reload()

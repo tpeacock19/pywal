@@ -35,8 +35,11 @@ def gtk():
     # This is done because the Python 3 GTK/Gdk libraries don't
     # provide a way of doing this.
     if shutil.which("python2"):
-        gtk_reload = os.path.join(MODULE_DIR, "scripts", "gtk_reload.py")
-        util.disown(["python2", gtk_reload])
+        gtk2_reload = os.path.join(MODULE_DIR, "scripts", "gtk2_reload.py")
+        util.disown(["python2", gtk2_reload])
+    if shutil.which("python3"):
+        gtk3_reload = os.path.join(MODULE_DIR, "scripts", "gtk3_reload.py")
+        util.disown(["python3", gtk3_reload])
 
     else:
         logging.warning("GTK2 reload support requires Python 2.")
